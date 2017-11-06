@@ -1,9 +1,7 @@
 """
 Describes an orthogonal polynomial.
-
 Author:
     Ilias Bilionis
-
 Date:
     7/25/2013
 """
@@ -17,13 +15,12 @@ import math
 import itertools
 from ._quadrature_rule import *
 from ._lancz import *
-import _orthpol as orthpol
+from . import _orthpol as orthpol
 
 
 class OrthogonalPolynomial(object):
 
     """1D Orthogonal Polynomial via recursive relation.
-
     A polynomial is of course a function.
     """
 
@@ -74,11 +71,10 @@ class OrthogonalPolynomial(object):
     def num_output(self):
         return self._num_output
 
-    def __init__(self, degree, rv=None, left=-1, right=1, wf=lambda(x): 1.,
+    def __init__(self, degree, rv=None, left=-1, right=1, wf=lambda x: 1.,
                  ncap=50, quad=None,
                  name='Orthogonal Polynomial'):
         """Construct the polynomial.
-
         Keyword Arguments:
             rv      ---     If not None, then it is assumed to be a
                             RandomVariable object which used to define
@@ -93,6 +89,8 @@ class OrthogonalPolynomial(object):
                             one.
             name    ---     A name for the polynomial.
         """
+        # ToDo: Find a way to provide more than one interval or even delta functions to generate coefficients
+        
         self.__name__ = name
         if rv is not None:
             left, right = rv.interval(1)
@@ -101,7 +99,6 @@ class OrthogonalPolynomial(object):
             quad = QuadratureRule(left=left, right=right, wf=wf, ncap=ncap)
         self._alpha, self._beta = lancz(quad.x, quad.w, degree + 1)
         self._gamma = np.ones(self.degree + 1, dtype='float64')
-        self.normalize()
         self._num_input = 1
         self._num_output = self.degree + 1
 
@@ -118,7 +115,6 @@ class OrthogonalPolynomial(object):
 
     def _d_eval(self, x):
         """Evaluate the derivative of the polynomial.
-
         Arguments:
             x   ---     The input point(s).
         """
@@ -196,7 +192,6 @@ class ProductBasis(object):
     def __init__(self, rvs=None, degree=1, polynomials=None, ncap=50,
                  quad=None, name='Product basis'):
         """Initialize the object.
-
         Keyword Argument
             rvs             ---     If not None, then it is assumed to
                                     be a list of random variables.
@@ -233,9 +228,7 @@ class ProductBasis(object):
 
     def _compute_basis_terms(self):
         """Compute the basis terms.
-
         The following is taken from Stokhos.
-
         The approach here for ordering the terms is inductive on the total
         order p.  We get the terms of total order p from the terms of total
         order p-1 by incrementing the orders of the first dimension by 1.
@@ -243,7 +236,6 @@ class ProductBasis(object):
         terms whose first dimension order is 0.  We then repeat for the third
         dimension whose first and second dimension orders are 0, and so on.
         How this is done is most easily illustrated by an example of dimension 3:
-
         Order  terms   cnt  Order  terms   cnt
         0    0 0 0          4    4 0 0  15 5 1
                                  3 1 0
