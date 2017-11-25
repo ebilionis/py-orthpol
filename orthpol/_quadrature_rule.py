@@ -8,9 +8,7 @@ Date:
     7/25/2013
 """
 
-
 __all__ = ['QuadratureRule']
-
 
 import numpy as np
 import math
@@ -56,7 +54,6 @@ def fejer(n, dtype='float64'):
 
 
 class QuadratureRule(object):
-
     """An object representing a quadrature rule."""
 
     # The quadrature points (N x D)
@@ -112,7 +109,7 @@ class QuadratureRule(object):
         When evaluating f(x) with x an N x D matrix,
         then f(x) should be an N x Q matrix.
         """
-        return np.dot(f(self.x).T, self.w) # Q x 1
+        return np.dot(f(self.x).T, self.w)  # Q x 1
 
     def _to_string(self, pad):
         """Return a string representation of the object."""

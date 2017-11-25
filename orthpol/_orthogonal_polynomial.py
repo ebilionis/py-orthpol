@@ -6,9 +6,7 @@ Date:
     7/25/2013
 """
 
-
 __all__ = ['OrthogonalPolynomial', 'ProductBasis']
-
 
 import numpy as np
 import math
@@ -19,7 +17,6 @@ from . import _orthpol as orthpol
 
 
 class OrthogonalPolynomial(object):
-
     """1D Orthogonal Polynomial via recursive relation.
     A polynomial is of course a function.
     """
@@ -90,7 +87,7 @@ class OrthogonalPolynomial(object):
             name    ---     A name for the polynomial.
         """
         # ToDo: Find a way to provide more than one interval or even delta functions to generate coefficients
-        
+
         self.__name__ = name
         if rv is not None:
             left, right = rv.interval(1)
@@ -144,7 +141,6 @@ class OrthogonalPolynomial(object):
 
 
 class ProductBasis(object):
-
     """A multi-input orthogonal polynomial basis."""
 
     # A container of polynomials
@@ -326,7 +322,7 @@ class ProductBasis(object):
             for j in range(self.num_input):
                 s += str(self.terms[i][j]) + ' '
             s += '\n'
-        s +=  ' num_terms = '
+        s += ' num_terms = '
         for i in range(self.degree + 1):
             s += str(self.num_terms[i]) + ' '
         return s
