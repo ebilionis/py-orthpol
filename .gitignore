@@ -1,22 +1,79 @@
-*.~
-*.dot
-*.txt
-*.pyc
-*.html
-*.pickle
-*.inv
-*.js
-*.out
-*doctree*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
 *.so
-*.swp
-*.o???????
-*.png
-*.pcl
-*.pickle
-*.bk
-src/CMakeFiles/
-src/Makefile
-src/cmake_install.cmake
-build
-backup
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# pyenv
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE stuff
+/.idea/
+/.project
+/.pydevproject
+/.settings
+*~
+
+# Cython
+cython_debug
+
+# ipython notebook
+.ipynb_checkpoints
+README.txt
+README.rst
