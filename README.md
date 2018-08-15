@@ -26,7 +26,7 @@ This package serves as a Python wrapper for the legacy Fortran code
 code can be found
 [here](https://www.cs.purdue.edu/archives/2001/wxg/codes/ORTHPOL).
 The code that computes tensors products of univariate orthogonal polynomials
-is a transolation of [Stockos](http://trilinos.sandia.gov/packages/stokhos/)
+is a transolation of [Stokhos](https://trilinos.org/packages/stokhos/)
 C++ routines to Python.
 
 Installation
@@ -58,9 +58,9 @@ Here is a list of them:
 + [demos/demo4.py](demos/demo4.py): Jacobi polynomials using a weight function.
 + [demos/demo5.py](demos/demo5.py): Gegenbauer polynomials using a weight function.
 + [demos/demo6.py](demos/demo6.py): Legendre polynomials using a weight function.
-+ [demos/demo7.pv](demos/demo7.py): Legendre polynomials using ``scipy.stats.uniform()``.
-+ [demos/demo8.pv](demos/demo8.py): Hermite polynomials using ``scipy.stats.norm()``.
-+ [demos/demo9.pv](demos/demo9.py): Shifted Hermite polynomials using a non-standard ``scipy.stats.norm()``.
++ [demos/demo7.py](demos/demo7.py): Legendre polynomials using ``scipy.stats.uniform()``.
++ [demos/demo8.py](demos/demo8.py): Hermite polynomials using ``scipy.stats.norm()``.
++ [demos/demo9.py](demos/demo9.py): Shifted Hermite polynomials using a non-standard ``scipy.stats.norm()``.
 + [demos/demo10.py](demos/demo10.py): Orthogonal polynomials with respect to a truncated normal.
 + [demos/demo11.py](demos/demo11.py): 2D orthogonal polynomials using the ``ProductBasis`` class and a collection of ``scipy.stats`` random variables.
 
