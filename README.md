@@ -35,13 +35,13 @@ Installation
 Simply clone the repository:
 
 ```
-git clone https://github.com/ebilionis/py-orthpol.git
+git clone https://github.com/moritzlange/py-orthpol.git
 ```
 
 Go inside the directory and run:
 
 ```
-python setup.py install
+python3 setup.py install
 ```
 
 Demos

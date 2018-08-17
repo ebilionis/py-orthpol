@@ -8,13 +8,11 @@ Date:
     7/25/2013
 """
 
-
 __all__ = ['QuadratureRule']
-
 
 import numpy as np
 import math
-import _orthpol as orthpol
+from . import _orthpol as orthpol
 
 
 def symtr(t):
@@ -56,7 +54,6 @@ def fejer(n, dtype='float64'):
 
 
 class QuadratureRule(object):
-
     """An object representing a quadrature rule."""
 
     # The quadrature points (N x D)
@@ -77,7 +74,7 @@ class QuadratureRule(object):
     def num_quad(self):
         return self._x.shape[0]
 
-    def __init__(self, left=-1, right=1, wf=lambda(x): 1., ncap=500,
+    def __init__(self, left=-1, right=1, wf=lambda x: 1., ncap=500,
                  name='Quadrature Rule'):
         """Construct a quadrature rule.
 
@@ -90,7 +87,7 @@ class QuadratureRule(object):
         """
         x, w = fejer(ncap)
         if wf is None:
-            wf = lambda(x): np.ones(x.shape)
+            wf = lambda x: np.ones(x.shape)
         if math.isinf(left) and math.isinf(right):
             phi, dphi = symtr(x)
             self._x = phi
@@ -112,7 +109,7 @@ class QuadratureRule(object):
         When evaluating f(x) with x an N x D matrix,
         then f(x) should be an N x Q matrix.
         """
-        return np.dot(f(self.x).T, self.w) # Q x 1
+        return np.dot(f(self.x).T, self.w)  # Q x 1
 
     def _to_string(self, pad):
         """Return a string representation of the object."""

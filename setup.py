@@ -6,7 +6,6 @@ from numpy.distutils.core import Extension
 import os
 import glob
 
-
 setup(name='py-orthpol',
       version='1.1',
       description='Construct orthogonal polynomials with respect to arbitrary measures in Python',
