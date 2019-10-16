@@ -25,15 +25,15 @@ rvs = [scipy.stats.uniform(), scipy.stats.norm()]
 # Then construct the product basis
 p = orthpol.ProductBasis(degree=degree, rvs=rvs)
 # Print info about the polynomials
-print str(p)
+print(str(p))
 # Evaluate the polynomials at some points
 X = np.hstack([rvs[0].rvs(size=(100, 1)), rvs[1].rvs(size=(100, 1))])
 # Look at the shape of X, it should be 100x2:
-print 'X shape:', X.shape
+print('X shape:', X.shape)
 # Evaluate the polynomials at X
 phi = p(X)
 # Look at the shape of phi, it should be 100xp.num_output
-print 'phi shape:', phi.shape
+print('phi shape:', phi.shape)
 # Take a look at the phi's also
-print 'phi:'
-print phi
+print('phi:')
+print(phi)

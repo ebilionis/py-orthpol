@@ -33,17 +33,17 @@ rv = scipy.stats.norm(loc=-5., scale=2.5)
 p = orthpol.OrthogonalPolynomial(degree, rv=rv)
 # An orthogonal polynomial is though of as a function.
 # Here is how to get the number of inputs and outputs of that function
-print 'Number of inputs:', p.num_input
-print 'Number of outputs:', p.num_output
+print('Number of inputs:', p.num_input)
+print('Number of outputs:', p.num_output)
 # Test if the polynomials are normalized (i.e., their norm is 1.):
-print 'Is normalized:', p.is_normalized
+print('Is normalized:', p.is_normalized)
 # Get the degree of the polynomial:
-print 'Polynomial degree:', p.degree
+print('Polynomial degree:', p.degree)
 # Get the alpha-beta recursion coefficients:
-print 'Alpha:', p.alpha
-print 'Beta:', p.beta
+print('Alpha:', p.alpha)
+print('Beta:', p.beta)
 # The following should print a description of the polynomial
-print str(p)
+print(str(p))
 # Now you can evaluate the polynomial at any points you want:
 X = np.linspace(-9., -1., 100)
 # Here is the actual evaluation
@@ -55,7 +55,7 @@ plt.title('Shifted Hermite Polynomials', fontsize=16)
 plt.xlabel('$x$', fontsize=16)
 plt.ylabel('$p_i(x)$', fontsize=16)
 plt.legend(['$p_{%d}(x)$' % i for i in range(p.num_output)], loc='best')
-print 'Close the window to continue...'
+print('Close the window to continue...')
 plt.show()
 # You may also compute the derivatives of the polynomials:
 dphi = p.d(X)
@@ -65,5 +65,5 @@ plt.title('Derivatives of Shifted Hermite Polynomials', fontsize=16)
 plt.xlabel('$x$', fontsize=16)
 plt.ylabel(r'$\frac{dp_i(x)}{dx}$', fontsize=16)
 plt.legend([r'$\frac{p_{%d}(x)}{dx}$' % i for i in range(p.num_output)], loc='best')
-print 'Close the window to end demo...'
+print('Close the window to end demo...')
 plt.show()

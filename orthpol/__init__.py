@@ -11,6 +11,6 @@ Date:
 __all__ = ['OrthogonalPolynomial', 'ProductBasis', 'QuadratureRule']
 
 
-import _orthpol
+import orthpol._orthpol as _orthopol
 from ._quadrature_rule import *
 from ._orthogonal_polynomial import *

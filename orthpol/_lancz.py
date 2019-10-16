@@ -12,7 +12,7 @@ __all__ = ['lancz']
 
 
 import numpy as np
-import _orthpol as orthpol
+import orthpol._orthpol as orthpol
 
 
 def lancz(x, w, n):
@@ -33,7 +33,7 @@ def lancz(x, w, n):
 if __name__ == '__main__':
     x = np.linspace(0., 1, 100)
     w = np.ones(100)
-    print x, w
+    print(x, w)
     alpha, beta = lancz(x, w, 10)
-    print alpha
-    print beta
+    print(alpha)
+    print(beta)

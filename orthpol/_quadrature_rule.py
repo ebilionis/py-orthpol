@@ -14,7 +14,7 @@ __all__ = ['QuadratureRule']
 
 import numpy as np
 import math
-import _orthpol as orthpol
+import orthpol._orthpol as orthpol
 
 
 def symtr(t):
@@ -77,7 +77,7 @@ class QuadratureRule(object):
     def num_quad(self):
         return self._x.shape[0]
 
-    def __init__(self, left=-1, right=1, wf=lambda(x): 1., ncap=500,
+    def __init__(self, left=-1, right=1, wf=lambda x: 1., ncap=500,
                  name='Quadrature Rule'):
         """Construct a quadrature rule.
 
@@ -90,7 +90,7 @@ class QuadratureRule(object):
         """
         x, w = fejer(ncap)
         if wf is None:
-            wf = lambda(x): np.ones(x.shape)
+            wf = lambda x: np.ones(x.shape)
         if math.isinf(left) and math.isinf(right):
             phi, dphi = symtr(x)
             self._x = phi

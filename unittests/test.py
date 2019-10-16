@@ -25,7 +25,7 @@ class GpcTest(unittest.TestCase):
         p = orthpol.ProductBasis(rvs, degree = 5)
         U = st.uniform.rvs(loc = -1, scale = 2., size = (10000,2))
         P = p(U)
-        print np.sum(P**2, axis = 0) / 10000
+        print(np.sum(P**2, axis = 0) / 10000)
 
 if __name__ == '__main__':
     unittest.main()
